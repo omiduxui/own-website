@@ -57,10 +57,9 @@
       text-align: left;
     }
 
-    .remove-cursor {
-      border-right: none !important;
-      animation: none !important;
-      width: auto !important;
+    .no-cursor {
+      animation: typing 2s steps(30, end) forwards;
+      border-right: none;
     }
 
     @keyframes typing {
@@ -151,7 +150,6 @@
 
   <!-- اسکریپت -->
   <script>
-    // تایپ و حذف اشاره‌گر
     window.addEventListener('load', () => {
       const elements = document.querySelectorAll('.typewriter-text');
       elements.forEach((el, i) => {
@@ -160,10 +158,9 @@
 
       setTimeout(() => {
         elements.forEach(el => {
-          el.classList.remove("typewriter-text");
-          el.classList.add("remove-cursor");
+          el.classList.add("no-cursor");
         });
-      }, 6000);
+      }, 6000); // بعد از پایان تایپ
     });
 
     // پارتیکل سمت راست
