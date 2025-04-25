@@ -54,11 +54,12 @@
       animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
       border-right: 2px solid currentColor;
       direction: ltr;
+      text-align: left;
     }
 
-    .typewriter-done {
-      animation: none;
-      border-right: none;
+    .remove-cursor {
+      border-right: none !important;
+      animation: none !important;
     }
 
     @keyframes typing {
@@ -139,19 +140,18 @@
 
   <!-- اسکریپت -->
   <script>
-    // افکت تایپ
     window.addEventListener('load', () => {
       const elements = document.querySelectorAll('.typewriter-text');
       elements.forEach((el, i) => {
-        el.style.animationDelay = `${i * 2.2}s`;
+        el.style.animationDelay = `${i * 2.5}s`;
       });
 
       // حذف اشاره‌گر بعد از تایپ
       setTimeout(() => {
         elements.forEach(el => {
-          el.classList.add("typewriter-done");
+          el.classList.add("remove-cursor");
         });
-      }, 5000);
+      }, 6000); // زمان کل تایپ شدن + کمی تأخیر
     });
 
     // پارتیکل سمت راست
