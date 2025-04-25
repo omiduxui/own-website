@@ -51,15 +51,23 @@
       white-space: nowrap;
       overflow: hidden;
       width: 0;
-      animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
-      border-right: 2px solid currentColor;
-      direction: ltr;
-      text-align: left;
+      animation: typing 2s steps(30, end) forwards;
+      position: relative;
     }
 
-    .no-cursor {
-      animation: typing 2s steps(30, end) forwards;
-      border-right: none;
+    .typewriter-text::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: currentColor;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    .no-cursor::after {
+      display: none;
     }
 
     @keyframes typing {
@@ -68,7 +76,7 @@
     }
 
     @keyframes blink {
-      50% { border-color: transparent }
+      50% { opacity: 0 }
     }
 
     .custom-button {
@@ -150,13 +158,11 @@
       const elements = document.querySelectorAll('.typewriter-text');
       elements.forEach((el, i) => {
         el.style.animationDelay = `${i * 2.5}s`;
+        // Hide cursor after typing animation is complete
+        setTimeout(() => {
+          el.classList.add('no-cursor');
+        }, (i * 2500) + 2000); // 2000ms = typing duration
       });
-
-      setTimeout(() => {
-        elements.forEach(el => {
-          el.classList.add("no-cursor");
-        });
-      }, 6000);
     });
 
     // پارتیکل سمت راست
