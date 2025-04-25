@@ -51,33 +51,12 @@
       white-space: nowrap;
       overflow: hidden;
       width: 0;
-      position: relative;
       animation: typing 2s steps(30, end) forwards;
-    }
-
-    .typewriter-text::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -2px;
-      width: 2px;
-      height: 100%;
-      background: currentColor;
-      animation: blink 0.75s step-end infinite;
-    }
-
-    .no-cursor::after {
-      display: none;
     }
 
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
-    }
-
-    @keyframes blink {
-      from, to { background-color: currentColor }
-      50% { background-color: transparent }
     }
 
     .custom-button {
@@ -159,10 +138,6 @@
       const elements = document.querySelectorAll('.typewriter-text');
       elements.forEach((el, i) => {
         el.style.animationDelay = `${i * 2.5}s`;
-        // Hide cursor after typing animation is complete
-        setTimeout(() => {
-          el.classList.add('no-cursor');
-        }, (i * 2500) + 2000); // 2000ms = typing duration
       });
     });
 
