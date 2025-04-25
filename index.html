@@ -52,31 +52,26 @@
       overflow: hidden;
       width: 0;
       animation: typing 2s steps(30, end) forwards;
-      position: relative;
+      border-right: 2px solid currentColor;
     }
 
-    .typewriter-text::after {
-      content: '';
-      position: absolute;
-      right: -2px;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: currentColor;
-      animation: blink 0.75s step-end infinite;
-    }
-
-    .no-cursor::after {
-      display: none;
+    .no-cursor {
+      border-right: none;
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      from { 
+        width: 0;
+        border-right-color: currentColor;
+      }
+      to { 
+        width: 100%;
+        border-right-color: currentColor;
+      }
     }
 
     @keyframes blink {
-      50% { opacity: 0 }
+      50% { border-right-color: transparent }
     }
 
     .custom-button {
