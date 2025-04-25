@@ -60,6 +60,7 @@
     .remove-cursor {
       border-right: none !important;
       animation: none !important;
+      width: auto !important;
     }
 
     @keyframes typing {
@@ -110,18 +111,28 @@
 
   <!-- محتوا -->
   <div class="relative z-10 flex flex-col items-end justify-center text-right min-h-screen px-4 sm:px-6">
-    <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-right">
-      <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
-    </h1>
-    <p class="text-xl sm:text-2xl mb-8 text-right">
-      <span id="job" class="typewriter-text">UX/UI Designer</span>
-    </p>
+    
+    <!-- نام -->
+    <div class="w-full flex justify-start">
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-left" dir="ltr">
+        <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
+      </h1>
+    </div>
 
+    <!-- عنوان -->
+    <div class="w-full flex justify-start">
+      <p class="text-xl sm:text-2xl mb-8 text-left" dir="ltr">
+        <span id="job" class="typewriter-text">UX/UI Designer</span>
+      </p>
+    </div>
+
+    <!-- دکمه‌ها -->
     <div class="flex flex-col sm:flex-row-reverse gap-4 mb-10 w-full sm:w-auto">
       <a href="Omid%20Ahmadnejad%20V1.pdf" target="_blank" class="custom-button resume shadow text-sm sm:text-base w-full sm:w-auto text-center">Resume</a>
       <a href="portfolio.pdf" target="_blank" class="custom-button portfolio shadow text-sm sm:text-base w-full sm:w-auto text-center">Portfolio</a>
     </div>
 
+    <!-- اطلاعات تماس -->
     <div class="space-y-4 text-base sm:text-xl w-full sm:w-auto">
       <p class="flex items-center justify-end gap-3">
         <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
@@ -140,18 +151,19 @@
 
   <!-- اسکریپت -->
   <script>
+    // تایپ و حذف اشاره‌گر
     window.addEventListener('load', () => {
       const elements = document.querySelectorAll('.typewriter-text');
       elements.forEach((el, i) => {
         el.style.animationDelay = `${i * 2.5}s`;
       });
 
-      // حذف اشاره‌گر بعد از تایپ
       setTimeout(() => {
         elements.forEach(el => {
+          el.classList.remove("typewriter-text");
           el.classList.add("remove-cursor");
         });
-      }, 6000); // زمان کل تایپ شدن + کمی تأخیر
+      }, 6000);
     });
 
     // پارتیکل سمت راست
