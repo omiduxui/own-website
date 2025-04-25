@@ -2,17 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Opening Resume...</title>
-  <meta http-equiv="refresh" content="0; url=Omid-Ahmadnejad-Resume.pdf">
+  <title>Resume - Omid Ahmadnejad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    // در صورت نیاز برای مرورگرهای خاص
-    window.location.href = "Omid-Ahmadnejad-Resume.pdf";
-  </script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      height: 100%;
+      color: white;
+      font-family: sans-serif;
+    }
+    .viewer {
+      height: 100vh;
+      width: 100%;
+    }
+    .fallback {
+      padding: 2rem;
+      text-align: center;
+      color: #ccc;
+    }
+    .fallback a {
+      color: #ffc757;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <p style="text-align:center; padding-top:2rem; color:#ccc;">
-    Redirecting to Resume PDF... If it doesn't load, <a href="Omid-Ahmadnejad-Resume.pdf">click here</a>.
-  </p>
+  <object class="viewer" data="Omid-Ahmadnejad-Resume.pdf" type="application/pdf">
+    <div class="fallback">
+      PDF viewer is not supported in this browser.<br>
+      <a href="Omid-Ahmadnejad-Resume.pdf">Click here to download the resume</a>
+    </div>
+  </object>
 </body>
 </html>
