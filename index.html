@@ -109,55 +109,41 @@
   <div id="tsparticles"></div>
 
   <!-- محتوا -->
-<!-- محتوا -->
-<div class="relative z-10 flex flex-col justify-center min-h-screen px-4 sm:px-6">
+  <div class="relative z-10 flex flex-col items-start justify-center text-left min-h-screen px-4 sm:px-6">
 
-  <!-- باکس سمت چپ برای تایپ -->
-  <div class="w-full sm:w-1/2 text-left" dir="ltr">
-    <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">
-      <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
-    </h1>
-    <p class="text-xl sm:text-2xl mb-8">
-      <span id="job" class="typewriter-text">UX/UI Designer</span>
-    </p>
-  </div>
+    <!-- نام -->
+    <div dir="ltr" class="w-full sm:w-2/3 text-left">
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">
+        <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
+      </h1>
+    </div>
 
-  <!-- دکمه‌ها و لینک‌ها -->
-  <div class="flex flex-col sm:flex-row-reverse gap-4 mb-10 w-full sm:w-auto">
-    <a href="Omid%20Ahmadnejad%20V1.pdf" target="_blank" class="custom-button resume shadow">Resume</a>
-    <a href="portfolio.pdf" target="_blank" class="custom-button portfolio shadow">Portfolio</a>
-  </div>
+    <!-- عنوان -->
+    <div dir="ltr" class="w-full sm:w-2/3 text-left">
+      <p class="text-xl sm:text-2xl mb-8">
+        <span id="job" class="typewriter-text">UX/UI Designer</span>
+      </p>
+    </div>
 
-  <div class="space-y-4 text-base sm:text-xl">
-    <p class="flex items-center justify-start gap-3">
-      <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
-      <i class="fas fa-envelope text-yellow-400 text-xl"></i>
-    </p>
-    <p class="flex items-center justify-start gap-3">
-      <a href="tel:+989369507200" class="underline" dir="ltr">+98-936-950-7200</a>
-      <i class="fas fa-phone-alt text-yellow-400 text-xl"></i>
-    </p>
-    <p class="flex items-center justify-start gap-3">
-      <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">Linkedin</a>
-      <i class="fab fa-linkedin text-yellow-400 text-xl"></i>
-    </p>
-  </div>
-</div>
-
+    <!-- دکمه‌ها -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+      <a href="Omid%20Ahmadnejad%20V1.pdf" target="_blank" class="custom-button resume shadow text-sm sm:text-base">Resume</a>
+      <a href="portfolio.pdf" target="_blank" class="custom-button portfolio shadow text-sm sm:text-base">Portfolio</a>
+    </div>
 
     <!-- اطلاعات تماس -->
-    <div class="space-y-4 text-base sm:text-xl w-full sm:w-auto">
-      <p class="flex items-center justify-end gap-3">
-        <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
+    <div class="space-y-4 text-base sm:text-xl">
+      <p class="flex items-center gap-3">
         <i class="fas fa-envelope text-yellow-400 text-xl"></i>
+        <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
       </p>
-      <p class="flex items-center justify-end gap-3">
-        <a href="tel:+989369507200" class="underline" dir="ltr">+98-936-950-7200</a>
+      <p class="flex items-center gap-3">
         <i class="fas fa-phone-alt text-yellow-400 text-xl"></i>
+        <a href="tel:+989369507200" class="underline" dir="ltr">+98-936-950-7200</a>
       </p>
-      <p class="flex items-center justify-end gap-3">
-        <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">Linkedin</a>
+      <p class="flex items-center gap-3">
         <i class="fab fa-linkedin text-yellow-400 text-xl"></i>
+        <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">Linkedin</a>
       </p>
     </div>
   </div>
@@ -174,7 +160,7 @@
         elements.forEach(el => {
           el.classList.add("no-cursor");
         });
-      }, 6000); // بعد از پایان تایپ
+      }, 6000);
     });
 
     // پارتیکل سمت راست
