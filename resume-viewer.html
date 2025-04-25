@@ -7,33 +7,20 @@
   <style>
     html, body {
       margin: 0;
-      padding: 0;
-      background: #0d0d0d;
       height: 100%;
-      color: white;
-      font-family: sans-serif;
+      background-color: #0d0d0d;
     }
-    .viewer {
-      height: 100vh;
+    iframe {
       width: 100%;
-    }
-    .fallback {
-      padding: 2rem;
-      text-align: center;
-      color: #ccc;
-    }
-    .fallback a {
-      color: #ffc757;
-      text-decoration: underline;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <object class="viewer" data="Omid-Ahmadnejad-Resume.pdf" type="application/pdf">
-    <div class="fallback">
-      PDF viewer is not supported in this browser.<br>
-      <a href="Omid-Ahmadnejad-Resume.pdf">Click here to download the resume</a>
-    </div>
-  </object>
+  <iframe
+    src="https://docs.google.com/gview?embedded=true&url=https://omiduxui.github.io/own-website/Omid-Ahmadnejad-Resume.pdf"
+    title="Resume PDF Viewer">
+  </iframe>
 </body>
 </html>
