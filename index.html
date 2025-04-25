@@ -10,24 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript"> 
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "r9jdeg0f9k");
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H990QEWZ91"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H990QEWZ91');
-  </script>
-
   <style>
     body {
       font-family: 'Vazirmatn', sans-serif;
@@ -50,13 +32,6 @@
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
-      width: 0;
-      animation: typing 2s steps(30, end) forwards;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
     }
 
     .custom-button {
@@ -89,6 +64,21 @@
     .custom-button.portfolio:hover {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), #ffffff;
     }
+
+    .blink-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #ffc757;
+      border-radius: 50%;
+      margin-left: 8px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
   </style>
 </head>
 <body class="relative">
@@ -96,49 +86,108 @@
   <!-- پارتیکل -->
   <div id="tsparticles"></div>
 
- <div class="relative z-10 flex flex-col items-start justify-center text-left min-h-screen px-4 sm:px-6 w-full sm:w-1/2 ml-0">
-  
-  <!-- نام و عنوان -->
-  <div dir="ltr" class="w-full text-left">
-    <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">
-      <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
-    </h1>
-    <p class="text-xl sm:text-2xl mb-8">
-      <span id="job" class="typewriter-text">UX/UI Designer</span>
-    </p>
-  </div>
+  <div class="relative z-10 flex flex-col items-start justify-center text-left min-h-screen px-4 sm:px-6 w-full sm:w-1/2 ml-0">
 
-  <!-- دکمه‌ها -->
-  <div class="flex flex-col sm:flex-row gap-4 mb-10">
-    <a href="Omid%20Ahmadnejad%20V1.pdf" target="_blank" class="custom-button resume shadow text-sm sm:text-base">Resume</a>
-    <a href="portfolio.pdf" target="_blank" class="custom-button portfolio shadow text-sm sm:text-base">Portfolio</a>
-  </div>
+    <!-- نام و عنوان -->
+    <div dir="ltr" class="w-full text-left">
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">
+        <span id="name" class="typewriter-text">Omid Ahmadnejad</span>
+      </h1>
+      <p class="text-xl sm:text-2xl mb-2">
+        <span id="job">UX/UI Designer</span>
+      </p>
+      <p class="text-lg sm:text-xl text-yellow-400 h-8 mb-8">
+        <span id="skill" class="typewriter-text"></span>
+        <span class="blink-dot"></span>
+      </p>
+    </div>
 
-  <!-- اطلاعات تماس -->
-  <div class="space-y-4 text-base sm:text-xl w-full text-left">
-    <p class="flex items-center gap-3">
-      <i class="fas fa-envelope text-yellow-400 text-xl"></i>
-      <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
-    </p>
-    <p class="flex items-center gap-3">
-      <i class="fas fa-phone-alt text-yellow-400 text-xl"></i>
-      <a href="tel:+989369507200" class="underline" dir="ltr">+98-936-950-7200</a>
-    </p>
-    <p class="flex items-center gap-3">
-      <i class="fab fa-linkedin text-yellow-400 text-xl"></i>
-      <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">Linkedin</a>
-    </p>
-  </div>
-</div>
+    <!-- دکمه‌ها -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+      <a href="Omid%20Ahmadnejad%20V1.pdf" target="_blank" class="custom-button resume shadow text-sm sm:text-base">Resume</a>
+      <a href="portfolio.pdf" target="_blank" class="custom-button portfolio shadow text-sm sm:text-base">Portfolio</a>
+    </div>
 
+    <!-- اطلاعات تماس -->
+    <div class="space-y-4 text-base sm:text-xl w-full text-left">
+      <p class="flex items-center gap-3">
+        <i class="fas fa-envelope text-yellow-400 text-xl"></i>
+        <a href="mailto:omid.ahmadnejad@gmail.com" class="underline">omid.ahmadnejad@gmail.com</a>
+      </p>
+      <p class="flex items-center gap-3">
+        <i class="fas fa-phone-alt text-yellow-400 text-xl"></i>
+        <a href="tel:+989369507200" class="underline" dir="ltr">+98-936-950-7200</a>
+      </p>
+      <p class="flex items-center gap-3">
+        <i class="fab fa-linkedin text-yellow-400 text-xl"></i>
+        <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">Linkedin</a>
+      </p>
+    </div>
+  </div>
 
   <!-- اسکریپت -->
   <script>
-    window.addEventListener('load', () => {
-      const elements = document.querySelectorAll('.typewriter-text');
-      elements.forEach((el, i) => {
-        el.style.animationDelay = `${i * 2.5}s`;
-      });
+    const skills = [
+      "User experience design",
+      "User interface design",
+      "User centered design",
+      "Interaction design",
+      "Responsive design",
+      "Wireframing",
+      "Prototyping",
+      "Using design systems",
+      "Low fidelity prototyping",
+      "High fidelity prototyping",
+      "Mind map",
+      "User flow",
+      "Accessibility principles",
+      "User research",
+      "Typography",
+      "Design Thinking",
+      "Information Architecture",
+      "Usability Testing",
+      "A/B test",
+      "UX writing"
+    ];
+
+    const typingDelay = 60;
+    const erasingDelay = 40;
+    const newTextDelay = 2000;
+
+    let skillIndex = 0;
+    let charIndex = 0;
+
+    const skillEl = document.getElementById("skill");
+
+    function typeSkill() {
+      if (charIndex < skills[skillIndex].length) {
+        skillEl.textContent += skills[skillIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeSkill, typingDelay);
+      } else {
+        setTimeout(eraseSkill, newTextDelay);
+      }
+    }
+
+    function eraseSkill() {
+      if (charIndex > 0) {
+        skillEl.textContent = skills[skillIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseSkill, erasingDelay);
+      } else {
+        skillIndex = (skillIndex + 1) % skills.length;
+        setTimeout(typeSkill, typingDelay);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      const nameEl = document.getElementById("name");
+      nameEl.style.animationDelay = `0s`;
+
+      setTimeout(() => {
+        document.getElementById("job").classList.add("no-cursor");
+        typeSkill();
+      }, 2500);
     });
 
     // پارتیکل سمت راست
