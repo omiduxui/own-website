@@ -51,27 +51,33 @@
       white-space: nowrap;
       overflow: hidden;
       width: 0;
+      position: relative;
       animation: typing 2s steps(30, end) forwards;
-      border-right: 2px solid currentColor;
     }
 
-    .no-cursor {
-      border-right: none;
+    .typewriter-text::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -2px;
+      width: 2px;
+      height: 100%;
+      background: currentColor;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    .no-cursor::after {
+      display: none;
     }
 
     @keyframes typing {
-      from { 
-        width: 0;
-        border-right-color: currentColor;
-      }
-      to { 
-        width: 100%;
-        border-right-color: currentColor;
-      }
+      from { width: 0 }
+      to { width: 100% }
     }
 
     @keyframes blink {
-      50% { border-right-color: transparent }
+      from, to { background-color: currentColor }
+      50% { background-color: transparent }
     }
 
     .custom-button {
