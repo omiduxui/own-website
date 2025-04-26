@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "r9jdeg0f9k");
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PVB83W846"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5PVB83W846');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Omid Ahmadnejad</title>
@@ -37,7 +21,7 @@
     #tsparticles {
       position: absolute;
       top: 0;
-      left: 50%;
+      right: 0;
       width: 50%;
       height: 100%;
       z-index: 0;
@@ -69,6 +53,19 @@
     .custom-button.portfolio:hover {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), #ffffff;
     }
+    .blink-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #ffc757;
+      border-radius: 50%;
+      margin-left: 8px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
   </style>
 </head>
 
@@ -80,7 +77,12 @@
   <div class="relative z-10 flex flex-col items-start justify-center text-left min-h-screen px-4 sm:px-6 w-full sm:w-1/2 ml-0">
     <div dir="ltr" class="w-full text-left mb-8">
       <h1 class="text-4xl sm:text-5xl font-bold">Omid Ahmadnejad</h1>
-      <h2 class="text-2xl sm:text-3xl text-yellow-400">UX/UI Designer</h2>
+      <h2 class="text-2xl sm:text-3xl text-white">UX/UI Designer</h2>
+
+      <!-- Skill Typing Animation -->
+      <div class="text-base sm:text-lg text-yellow-400 mt-2 h-6 overflow-hidden">
+        <span id="skill-text"></span><span class="blink-dot"></span>
+      </div>
     </div>
 
     <div class="flex flex-col sm:flex-row gap-4 mb-10">
@@ -109,14 +111,14 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-6 h-6 text-yellow-400">
           <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.2 107 0 82.8 0 53.6 0 24.1 24.1 0 53.6 0c29.5 0 53.6 24.1 53.6 53.6 0 29.2-24.1 53.4-53.6 53.4zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 16-44 31.4-2.3 5.5-2.8 13.2-2.8 20.9V448h-92.4s1.2-266.3 0-294h92.4v41.7c12.3-19 34.3-46 83.5-46 60.9 0 106.6 39.8 106.6 125.2V448z"/>
         </svg>
-        <a href="https://www.linkedin.com/in/omid-ahmadnejad" target="_blank" class="underline">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/omidahmadnejad" target="_blank" class="underline">LinkedIn</a>
       </p>
 
     </div>
   </div>
 
   <script>
-    // Particle Config
+    // tsParticles setup
     tsParticles.load("tsparticles", {
       background: { color: "#0d0d0d" },
       fpsLimit: 60,
@@ -148,7 +150,61 @@
       fullScreen: { enable: false }
     });
 
-    // Mobile Download
+    // Skills typing animation
+    const skills = [
+      "User experience design",
+      "User interface design",
+      "User centered design",
+      "Interaction design",
+      "Responsive design",
+      "Wireframing",
+      "Prototyping",
+      "Using design systems",
+      "Low fidelity prototyping",
+      "High fidelity prototyping",
+      "Mind map",
+      "User flow",
+      "Accessibility principles",
+      "User research",
+      "Typography",
+      "Design Thinking",
+      "Information Architecture",
+      "Usability Testing",
+      "A/B test",
+      "UX writing"
+    ];
+
+    let skillIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+    const skillText = document.getElementById('skill-text');
+
+    function typeSkill() {
+      if (typing) {
+        if (charIndex < skills[skillIndex].length) {
+          skillText.textContent += skills[skillIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeSkill, 70);
+        } else {
+          typing = false;
+          setTimeout(typeSkill, 1000);
+        }
+      } else {
+        if (charIndex > 0) {
+          skillText.textContent = skills[skillIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeSkill, 30);
+        } else {
+          typing = true;
+          skillIndex = (skillIndex + 1) % skills.length;
+          setTimeout(typeSkill, 200);
+        }
+      }
+    }
+
+    typeSkill();
+
+    // Mobile download for Resume/Portfolio
     function isMobile() {
       return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
