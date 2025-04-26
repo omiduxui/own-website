@@ -149,8 +149,24 @@
 
     <!-- دکمه‌ها -->
   <div class="flex flex-col sm:flex-row gap-4 mb-10">
-     <a href="resume-viewer.html" class="custom-button resume" target="_blank" rel="noopener noreferrer">Resume</a>
-<a href="portfolio-viewer.html" class="custom-button portfolio" target="_blank" rel="noopener noreferrer">Portfolio</a>
+   <a id="resume-link" href="Omid-Ahmadnejad-Resume.pdf" target="_blank" rel="noopener noreferrer">
+  View Resume
+</a>
+
+<a id="portfolio-link" href="Omid-Ahmadnejad-Portfolio.pdf" target="_blank" rel="noopener noreferrer">
+  View Portfolio
+</a>
+
+<script>
+  function isMobile() {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
+
+  if (isMobile()) {
+    document.getElementById('resume-link').setAttribute('download', '');
+    document.getElementById('portfolio-link').setAttribute('download', '');
+  }
+</script>
 
   </div>
 
