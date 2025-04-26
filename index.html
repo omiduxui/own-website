@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Omid Ahmadnejad</title>
-  
+
   <!-- TailwindCSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- FontAwesome (دیگه نیاز نداری ولی گذاشتم اگه خواستی حذف کن) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papaz3vA+/R5E2wE2l5DlMFl9o+aK5NfN1uIzY+wP8nqDEfE+bXq23dy7gHs8oG8qEnPZoKn/yZMjJplOfN2eg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 
   <style>
     body {
@@ -17,6 +17,15 @@
       background-color: #0d0d0d;
       color: white;
       margin: 0;
+    }
+    #tsparticles {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
     .custom-button {
       display: inline-flex;
@@ -47,7 +56,11 @@
   </style>
 </head>
 
-<body>
+<body class="relative overflow-hidden">
+
+  <!-- Particles -->
+  <div id="tsparticles"></div>
+
   <div class="relative z-10 flex flex-col items-start justify-center text-left min-h-screen px-4 sm:px-6 w-full sm:w-1/2 ml-0">
     <div dir="ltr" class="w-full text-left mb-8">
       <h1 class="text-4xl sm:text-5xl font-bold">Omid Ahmadnejad</h1>
@@ -87,13 +100,7 @@
   </div>
 
   <script>
-    function isMobile() {
-      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    }
-    if (isMobile()) {
-      document.getElementById('resume-link').setAttribute('download', '');
-      document.getElementById('portfolio-link').setAttribute('download', '');
-    }
+    // Particle Config
     tsParticles.load("tsparticles", {
       background: { color: "#0d0d0d" },
       fpsLimit: 60,
@@ -124,6 +131,16 @@
       detectRetina: true,
       fullScreen: { enable: false }
     });
+
+    // Mobile Download
+    function isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
+    if (isMobile()) {
+      document.getElementById('resume-link').setAttribute('download', '');
+      document.getElementById('portfolio-link').setAttribute('download', '');
+    }
   </script>
+
 </body>
 </html>
